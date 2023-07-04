@@ -1,5 +1,3 @@
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
 import Home from "./pages/Home";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Surah from "./pages/Surah";
@@ -20,8 +18,7 @@ function App() {
   return (
     <>
       <div className="bg-gray-900 text-white min-h-screen">
-        <Header />
-        <div className="pl-10 pr-10">
+        <div className="pl-10 pr-10 pb-48">
           <ContextData.Provider value={{ isPlay, handlePlay,audio,nama }}>
             <HashRouter>
               <Routes>
@@ -32,7 +29,6 @@ function App() {
             <Player />
           </ContextData.Provider>
         </div>
-        <Footer />
       </div>
     </>
   );

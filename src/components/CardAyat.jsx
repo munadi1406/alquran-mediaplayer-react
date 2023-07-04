@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types'
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useRef } from 'react';
+import { useEffect,useState,useRef } from 'react';
 import { FaCirclePause, FaCirclePlay } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 const CardAyat = (props) => {
@@ -14,6 +12,18 @@ const CardAyat = (props) => {
 
   useEffect(() => {
     play ? audioRef.current.play() : audioRef.current.pause()
+    const handleAudioEnded = () => {
+      setPlay(false);
+    };
+    const currentAudioRef = audioRef.current; // Salin audioRef.current ke variabel
+
+    currentAudioRef.addEventListener('ended', handleAudioEnded);
+  
+    // Membersihkan event listener saat komponen tidak lagi digunakan
+    return () => {
+      currentAudioRef.removeEventListener('ended', handleAudioEnded);
+    };
+    
   }, [play])
 
   return (
@@ -46,7 +56,7 @@ CardAyat.propTypes = {
   nomorAyat: PropTypes.number.isRequired,
   teksArab: PropTypes.string.isRequired,
   teksIndonesia: PropTypes.string.isRequired,
-  audio: PropTypes.string.isRequired
+  audio: PropTypes.object.isRequired
 }
 
 export default CardAyat

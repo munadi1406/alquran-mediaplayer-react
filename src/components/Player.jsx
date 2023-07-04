@@ -16,7 +16,6 @@ const Player = () => {
                 <AudioPlayer
                     autoPlay
                     src={audio}
-                    onPlay={() => console.log("onPlay")}
                     className="bg-transparent text-white"
                     style={{ color: "white" }}
                     header={`${nama}`}
