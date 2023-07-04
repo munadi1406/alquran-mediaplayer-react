@@ -24,7 +24,6 @@ const Card = (props) => {
           </Link>
           <div>
             <div
-
               className="cursor-pointer  flex justify-end items-center"
             >
               <FaCirclePlay size={50} onClick={() => handlePlay(props.audioFull["03"], props.namaLatin)}/>
