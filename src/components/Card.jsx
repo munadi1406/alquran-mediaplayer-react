@@ -8,10 +8,10 @@ import { motion } from "framer-motion";
 const Card = (props) => {
   const { handlePlay } = useContext(ContextData);
   return (
-    <motion.div initial={{ opacity: 0, x:-50 }}
-      whileInView={{ opacity: 1 , x:0}}
-      viewport={{ once: true }}
-      transition={{duration:0.3}}>
+    <motion.div initial={{ opacity: 0, scale:0.5 }}
+      whileInView={{ opacity: 1 , scale:1}}
+      viewport={{once:true}}
+      transition={{ type: 'spring', stiffness: 50 }}>
       <div className="p-2 m-1  min-h-46 bg-white/10 backdrop-blur-sm backdrop-filter rounded-md relative">
         <div className="grid grid-cols-2 ">
           <Link to={`/Surah/${props.nomor}`}>

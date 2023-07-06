@@ -28,8 +28,8 @@ const CardAyat = (props) => {
 
   return (
     <motion.div
-      initial={{y:40,opacity:0}}
-      whileInView={{y:0,opacity:1}}
+      initial={{opacity:0}}
+      whileInView={{opacity:1}}
       viewport={{once:true}}
       transition={{duration:0.3}}
     >

@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <div className="bg-gray-900 text-white min-h-screen">
-        <div className="pl-10 pr-10 pb-48">
+        <div className="pl-1 pr-1 lg:pl-10 lg:pr-10  pb-48">
           <ContextData.Provider value={{ isPlay, handlePlay,audio,nama }}>
             <HashRouter>
               <Routes>
